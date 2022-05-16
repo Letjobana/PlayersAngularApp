@@ -10,7 +10,7 @@ export class AppComponent {
   public players: Player[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Player[]>(baseUrl + 'api/Player').subscribe(result => {
+    http.get<Player[]>(baseUrl + 'api/Players/GetPlayers').subscribe(result => {
       this.players = result;
     }, error => console.error(error));
   }
